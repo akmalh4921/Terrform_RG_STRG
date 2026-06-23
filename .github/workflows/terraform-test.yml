@@ -1,0 +1,30 @@
+name: Terraform CI
+
+on:
+  workflow_dispatch:
+
+jobs:
+  terraform:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Terraform Version
+        run: terraform version
+
+      - name: Azure Account
+        run: az account show
+
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform Validate
+        run: terraform validate
+
+      - name: Terraform Formating
+        run: terraform fmt
+
+      - name: Terraform Plan
+        run: terraform plan
