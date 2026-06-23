@@ -12,7 +12,15 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, Wasif!
 
-      - name: Run a multi-line script
+      - name: Runner Info
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          hostname
+          whoami
+          
+      - name: Print Working Directory
+        run: pwd
+        
+      - name: Show Current Directory
+        run: cd  
+      - name: List Files
+        run: dir  
